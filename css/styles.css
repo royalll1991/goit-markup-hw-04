@@ -50,7 +50,10 @@ margin-right: 76px;}
         letter-spacing: 0.02em;
         padding: 24px 0 ;
     display: block;
-transition-property: color;}
+transition-property: color;
+position: relative;}
+
+.link-color {color: #404bbf;}
 
         .contakts-list-ltem {font-size: 16px;
             font-weight: 400;
@@ -62,7 +65,8 @@ transition-property: color;}
 
 .contakts-link {line-height: 1.5;
     color: #434455;
-transition-property: color;} 
+transition-property: color;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);} 
 
 .contakts-link:hover,
 .contakts-link:focus {color: #404BBF;}
@@ -75,10 +79,14 @@ transition-property: color;}
 .page-nav-list:hover::after,
 .page-nav-list:focus::after {display: block;
 content: "";
+position: absolute;
+left: 0;
+bottom: -1px;
+border-radius: 2px;
 width: 100%;
 height: 4px;
 background-color: #404BBF;
-margin-top: 20px; ;}
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
 .container-navigate {
     display: flex;
@@ -91,7 +99,8 @@ align-items: center;}
 .contakts-list {display: flex;
 gap: 40px;}
 
-.main-page {border-bottom: 1px solid #E7E9FC;}
+.main-page {border-bottom: 1px solid #E7E9FC;
+box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08)}
 
 /* heder styles */
 
@@ -100,7 +109,9 @@ gap: 40px;}
     padding: 188px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url("../images/jpg/people-office.jpg");
 background-repeat: no-repeat;
-background-size: cover;}
+background-size: cover;
+max-width: 1440px;
+background-position: center;}
 
 .hero-type {color: var(--wite-color);  text-align: center;
     font-size: 56px;
@@ -126,7 +137,8 @@ min-width: 169px;
 height: 56px;
 border: none;
 margin-right: auto;
-margin-left: auto;}
+margin-left: auto;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
     .hero-button:hover,
     .hero-button:focus {background-color: #404BBF;}
@@ -168,7 +180,10 @@ gap: 24px;}
 .feuters-section {padding-top: 120px;
 padding-bottom: 120px;}
 
-.option-list-position-icon {padding: 24px 100px;
+.option-list-position-icon {display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
 border-radius: 4px;
     border: 1px solid  #8E8F99;
     background: var(--cloud-color);
@@ -190,7 +205,10 @@ margin-bottom: 72px;}
 
 .team-list-item {background-color: #FFFFFF;
 width: calc((100% - 72px) / 4);
-border-radius: 0px 0px 4px 4px;}
+border-radius: 0px 0px 4px 4px;
+box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);}
 
 .team-list-name {color: var(--primeri-color);
     font-size: 20px;
@@ -236,7 +254,10 @@ transition-property: background-color;}
 .social-list-item{ width: calc((100% - 72px); / 4);
 text-align: center;
 width: 40px;
-    height: 40px;}
+    height: 40px;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+
+.team-social-icon {fill: var(--cloud-color);}
 
 /* Our Team */
 
@@ -272,14 +293,16 @@ background-color: var(--wite-color);}
     border-top: none;}
 
 .box-img {position: relative;
-overflow: hidden;}
+overflow: hidden;
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 .text-img {color: var(--cloud-color);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.50;
     letter-spacing: 0.02em;
-padding: 40px 32px;}
-.overflow {background-color: var(--main-color);
+padding: 40px 32px;
+transform: translateY(0%);
+background-color: var(--main-color);
 position: absolute;
 top: 0;
 left: 0;
@@ -288,7 +311,8 @@ height: 100%;
 transform: translate(-100%);
 transition: transform 250ms ease-in-out;}
 
-.box-img:hover .overflow {transform: translateX(0);}
+.box-img:hover .text-img {transform: translateX(0);
+box-shadow:  0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);}
 
 
 /* Portfolio */
@@ -328,7 +352,7 @@ transition: transform 250ms ease-in-out;}
         font-size: 16px;
         font-weight: 500;
     line-height: 1.50;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.02em;
 margin-bottom: 16px;}
 
 .social-list-end {
@@ -362,5 +386,6 @@ transition-property: background-color;}
 }
 
 .end-container {display: flex;
-}
-.logo-end-conteiner {margin-right: 120px;}
+align-items: baseline;}
+
+.team-social-icon {fill: var(--cloud-color);}
